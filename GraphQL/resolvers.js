@@ -3,7 +3,6 @@ const {
   createURL,
   GET_POPULAR,
   GET_MOVIE,
-  GET_GENRES,
   GET_BY_QUERY,
 } = require('./api');
 

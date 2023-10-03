@@ -31,3 +31,17 @@ export const GET_MOVIE = gql`
     }
   }
 `;
+export const SEARCH_MOVIE = gql`
+  query ExampleQuery($query: String!, $language: String!, $page: Int!) {
+    getSearchedMovie(query: $query, language: $language, page: $page) {
+      adult
+      id
+      original_title
+      backdrop_path
+      poster_path
+      overview
+      release_date
+      title
+    }
+  }
+`;

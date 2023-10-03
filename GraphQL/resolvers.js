@@ -1,11 +1,17 @@
-const { fetchData, createURL, CREATE_URL_DEFAULT_PROPS } = require('./api');
+const {
+  fetchData,
+  createURL,
+  GET_POPULAR,
+  GET_MOVIE,
+  GET_GENRES,
+  GET_BY_QUERY,
+} = require('./api');
 
 const resolvers = {
   Query: {
     getPopularMovies: async (parent, { page, language }, context) => {
       const result = await fetchData(
-        createURL({
-          ...CREATE_URL_DEFAULT_PROPS,
+        createURL(GET_POPULAR, {
           page: page,
           language: language,
         })
@@ -15,9 +21,20 @@ const resolvers = {
 
     getMovie: async (parent, { id, language }, context) => {
       const result = await fetchData(
-        createURL({ ...CREATE_URL_DEFAULT_PROPS, id: id, language: language })
+        createURL(GET_MOVIE, { id: id, language: language })
       );
       return result;
+    },
+
+    getSearchedMovie: async (parent, { query, language, page }, context) => {
+      const result = await fetchData(
+        createURL(GET_BY_QUERY, {
+          query: query,
+          language: language,
+          page: page,
+        })
+      );
+      return result.results;
     },
   },
 };

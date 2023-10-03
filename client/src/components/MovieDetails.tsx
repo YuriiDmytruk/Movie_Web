@@ -1,10 +1,14 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
-import { GET_MOVIE } from '../apolo/queries';
+import { SEARCH_MOVIE } from '../apolo/queries';
 
 const MovieDetails = () => {
-  const { loading, error, data } = useQuery(GET_MOVIE, {
-    variables: { id: 980489, language: 'en-US' },
+  const { loading, error, data } = useQuery(SEARCH_MOVIE, {
+    variables: {
+      query: 'Top',
+      language: 'en-US',
+      page: 1,
+    },
   });
 
   if (loading) return <p>Loading...</p>;

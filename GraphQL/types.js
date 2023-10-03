@@ -1,16 +1,16 @@
 const { gql } = require('apollo-server');
 
 const typeDefs = gql`
-  type PopularMovie {
+  type ShortMovie {
     adult: Boolean!
-    backdrop_path: String!
+    backdrop_path: String
     genre_ids: [ID!]
     id: ID!
     original_language: String!
     original_title: String!
     overview: String!
     popularity: Int!
-    poster_path: String!
+    poster_path: String
     release_date: String!
     title: String!
     video: Boolean!
@@ -43,7 +43,7 @@ const typeDefs = gql`
 
   type Movie {
     adult: Boolean!
-    backdrop_path: String!
+    backdrop_path: String
     belongs_to_collection: String
     budget: Int!
     genres: [Genre]
@@ -70,8 +70,13 @@ const typeDefs = gql`
   }
 
   type Query {
-    getPopularMovies(page: Int!, language: String!): [PopularMovie]
+    getPopularMovies(page: Int!, language: String!): [ShortMovie]
     getMovie(id: ID!, language: String!): Movie
+    getSearchedMovie(
+      query: String!
+      language: String!
+      page: Int!
+    ): [ShortMovie]
   }
 `;
 

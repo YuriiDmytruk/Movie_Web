@@ -1,9 +1,11 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
-import { GET_MOVIES } from '../apolo/queries';
+import { GET_MOVIE } from '../apolo/queries';
 
 const MovieDetails = () => {
-  const { loading, error, data } = useQuery(GET_MOVIES);
+  const { loading, error, data } = useQuery(GET_MOVIE, {
+    variables: { id: 980489, language: 'en-US' },
+  });
 
   if (loading) return <p>Loading...</p>;
   if (error) {

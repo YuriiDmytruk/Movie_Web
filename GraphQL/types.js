@@ -8,7 +8,7 @@ const typeDefs = gql`
   }
 
   type Query {
-    getMovies: [Movie]
+    getPopularMovies: [Movie]
   }
 `;
 

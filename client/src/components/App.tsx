@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import MovieDetails from './MovieDetails';
+import MoviePage from '../pages/MoviePage';
+import { NavBar } from './index';
 
-const App = () => (
-  <div>
-    <MovieDetails />
-  </div>
-);
+const App = () => {
+  const [query, setQuery] = useState('');
+
+  return (
+    <>
+      <NavBar setQuery={setQuery} />
+      <MoviePage query={query} />
+    </>
+  );
+};
 
 export default App;

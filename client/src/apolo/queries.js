@@ -4,9 +4,7 @@ export const GET_MOVIES = gql`
   query GET_MOVIES($page: Int!, $language: String!) {
     getPopularMovies(page: $page, language: $language) {
       adult
-      backdrop_path
       id
-      original_title
       overview
       poster_path
       release_date

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import MoviePage from '../pages/MoviePage';
+import MoviePage from '../pages/MoviesPage';
 import { NavBar } from './index';
 
 import { GET_NOW_PLAYING, GET_NOW_PLAYING_TYPE } from '../apolo/queries';

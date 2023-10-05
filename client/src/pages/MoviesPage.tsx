@@ -42,7 +42,7 @@ const MoviePage: React.FC<MoviPagePropsInterface> = (props) => {
   return (
     <MoviePageContainer>
       <MoviesList movies={movies || []} />
-      {data ? (
+      {data && movies.length !== 0 ? (
         <MoviePagination page={page} pages={pages} setPage={setPage} />
       ) : (
         <></>

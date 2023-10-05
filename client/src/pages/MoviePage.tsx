@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { DocumentNode, useQuery } from '@apollo/client';
 
-import { MoviesList } from '../components/index';
+import { MoviesList, MoviePagination } from '../components/index';
 import { MoviePageContainer } from '../styled/MoviePage';
 
 interface MoviPagePropsInterface {
@@ -13,6 +13,8 @@ interface MoviPagePropsInterface {
 }
 
 const MoviePage: React.FC<MoviPagePropsInterface> = (props) => {
+  const [page, setPage] = useState(1);
+
   const { loading, error, data } = useQuery(props.gqlQuery.query, {
     variables: {
       language: 'en-US',
@@ -25,13 +27,12 @@ const MoviePage: React.FC<MoviPagePropsInterface> = (props) => {
   if (error) {
     console.error(error);
   }
-
-  const movies = data[props.gqlQuery.type];
-
-  console.log({ ...data });
+  console.log(data);
+  const movies = data ? data[props.gqlQuery.type] : [];
   return (
     <MoviePageContainer>
       <MoviesList movies={movies || []} />
+      <MoviePagination page={page} setPage={setPage} />
     </MoviePageContainer>
   );
 };

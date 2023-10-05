@@ -16,6 +16,7 @@ const typeDefs = gql`
     video: Boolean!
     vote_average: Int!
     vote_count: Int!
+    total_pages: Int!
   }
 
   type Genre {
@@ -71,6 +72,8 @@ const typeDefs = gql`
 
   type Query {
     getPopularMovies(page: Int!, language: String!): [ShortMovie]
+    getTopRatedMovies(page: Int!, language: String!): [ShortMovie]
+    getNowPlayingMovies(page: Int!, language: String!): [ShortMovie]
     getMovie(id: ID!, language: String!): Movie
     getSearchedMovie(
       query: String!

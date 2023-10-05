@@ -6,6 +6,7 @@ import {
   CardContent,
   CardActions,
   Typography,
+  Box,
 } from '@mui/material';
 
 import { MovieType } from '../../types';
@@ -14,10 +15,20 @@ import { Button } from '@mui/material';
 interface MovieCardPropsInterface {
   movie: MovieType;
 }
+const MAX_LENGHT = 215;
 
 const MovieCard: React.FC<MovieCardPropsInterface> = (props) => {
+  const cutOverview = (input: string) =>
+    input.length <= MAX_LENGHT ? input : input.slice(0, MAX_LENGHT) + '...';
+
+  const cardStyle: React.CSSProperties = {
+    height: '700px',
+    display: 'flex',
+    flexDirection: 'column',
+  };
+
   return (
-    <Card sx={{ Height: 500 }}>
+    <Card style={cardStyle}>
       <CardHeader
         title={props.movie.title}
         subheader={props.movie.release_date}
@@ -30,9 +41,10 @@ const MovieCard: React.FC<MovieCardPropsInterface> = (props) => {
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          {props.movie.overview}
+          {cutOverview(props.movie.overview)}
         </Typography>
       </CardContent>
+      <Box sx={{ flexGrow: 1 }} />
       <CardActions disableSpacing>
         <Button>Check</Button>
       </CardActions>

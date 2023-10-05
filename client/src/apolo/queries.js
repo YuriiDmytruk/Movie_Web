@@ -10,6 +10,7 @@ export const GET_POPULAR = gql`
       poster_path
       release_date
       title
+      total_pages
     }
   }
 `;

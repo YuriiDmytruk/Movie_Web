@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   Card,
   CardHeader,
@@ -47,7 +48,9 @@ const MovieCard: React.FC<MovieCardPropsInterface> = (props) => {
       </CardContent>
       <Box sx={{ flexGrow: 1 }} />
       <CardActions disableSpacing>
-        <Button>Check</Button>
+        <Link to={`/movie/${props.movie.id}`}>
+          <Button>Check</Button>
+        </Link>
       </CardActions>
     </Card>
   );

@@ -56,15 +56,24 @@ export const GET_MOVIE = gql`
   query GET_MOVIE($id: ID!, $language: String!) {
     getMovie(id: $id, language: $language) {
       id
+      adult
       budget
       genres {
         id
         name
       }
-      original_language
+      poster_path
       original_title
       popularity
       overview
+      production_companies {
+        name
+      }
+      production_countries {
+        name
+      }
+      release_date
+      runtime
     }
   }
 `;

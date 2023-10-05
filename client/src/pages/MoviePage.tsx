@@ -32,8 +32,6 @@ const MoviePage: React.FC<MoviPagePropsInterface> = (props) => {
     console.error(error);
   }
 
-  console.log(data);
-
   const movies = data ? data[props.gqlQuery.type].movies : [];
   const pages = data
     ? data[props.gqlQuery.type].total_pages > 20
@@ -44,7 +42,11 @@ const MoviePage: React.FC<MoviPagePropsInterface> = (props) => {
   return (
     <MoviePageContainer>
       <MoviesList movies={movies || []} />
-      <MoviePagination page={page} pages={pages} setPage={setPage} />
+      {data ? (
+        <MoviePagination page={page} pages={pages} setPage={setPage} />
+      ) : (
+        <></>
+      )}
     </MoviePageContainer>
   );
 };

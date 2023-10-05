@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-
 import Pagination from '@mui/material/Pagination';
+
+import { PaginationStyled } from '../styled/MoviePagination';
 
 interface MoviePaginationInterfce {
   setPage: (page: number) => void;
@@ -17,14 +18,17 @@ const MoviePagination: React.FC<MoviePaginationInterfce> = (props) => {
   };
 
   return (
-    <Pagination
-      color="primary"
-      count={props.pages}
-      page={page}
-      onChange={onPageChange}
-      showFirstButton
-      showLastButton
-    />
+    <PaginationStyled>
+      <Pagination
+        size="large"
+        color="primary"
+        count={props.pages}
+        page={page}
+        onChange={onPageChange}
+        showFirstButton
+        showLastButton
+      />
+    </PaginationStyled>
   );
 };
 

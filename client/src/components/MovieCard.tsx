@@ -15,11 +15,12 @@ import { Button } from '@mui/material';
 interface MovieCardPropsInterface {
   movie: MovieType;
 }
-const MAX_LENGHT = 215;
+const MAX_OVERVIE_LENGHT = 215;
+const MAX_TITLE_LENGHT = 23;
 
 const MovieCard: React.FC<MovieCardPropsInterface> = (props) => {
-  const cutOverview = (input: string) =>
-    input.length <= MAX_LENGHT ? input : input.slice(0, MAX_LENGHT) + '...';
+  const cutOverview = (input: string, maxChars: number) =>
+    input.length <= maxChars ? input : input.slice(0, maxChars) + '...';
 
   const cardStyle: React.CSSProperties = {
     height: '700px',
@@ -30,7 +31,7 @@ const MovieCard: React.FC<MovieCardPropsInterface> = (props) => {
   return (
     <Card style={cardStyle}>
       <CardHeader
-        title={props.movie.title}
+        title={cutOverview(props.movie.title, MAX_TITLE_LENGHT)}
         subheader={props.movie.release_date}
       />
       <CardMedia
@@ -41,7 +42,7 @@ const MovieCard: React.FC<MovieCardPropsInterface> = (props) => {
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          {cutOverview(props.movie.overview)}
+          {cutOverview(props.movie.overview, MAX_OVERVIE_LENGHT)}
         </Typography>
       </CardContent>
       <Box sx={{ flexGrow: 1 }} />

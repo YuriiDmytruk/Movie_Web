@@ -3,13 +3,13 @@ import React, { useState } from 'react';
 import MoviePage from '../pages/MoviePage';
 import { NavBar } from './index';
 
-import { GET_POPULAR, GET_POPULAR_TYPE } from '../apolo/queries';
+import { GET_NOW_PLAYING, GET_NOW_PLAYING_TYPE } from '../apolo/queries';
 
 const App = () => {
   const [query, setQuery] = useState('');
   const [gqlQuery, setgqlQuery] = useState({
-    query: GET_POPULAR,
-    type: GET_POPULAR_TYPE,
+    query: GET_NOW_PLAYING,
+    type: GET_NOW_PLAYING_TYPE,
   });
 
   return (

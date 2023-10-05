@@ -1,6 +1,12 @@
 const { gql } = require('apollo-server');
 
+// Short Movie is a array so create object with array field and number of pages!!!!!!!
 const typeDefs = gql`
+  type MovieResponse {
+    movies: [ShortMovie]
+    total_pages: Int!
+  }
+
   type ShortMovie {
     adult: Boolean!
     backdrop_path: String
@@ -16,7 +22,6 @@ const typeDefs = gql`
     video: Boolean!
     vote_average: Int!
     vote_count: Int!
-    total_pages: Int!
   }
 
   type Genre {
@@ -71,15 +76,15 @@ const typeDefs = gql`
   }
 
   type Query {
-    getPopularMovies(page: Int!, language: String!): [ShortMovie]
-    getTopRatedMovies(page: Int!, language: String!): [ShortMovie]
-    getNowPlayingMovies(page: Int!, language: String!): [ShortMovie]
+    getPopularMovies(page: Int!, language: String!): MovieResponse
+    getTopRatedMovies(page: Int!, language: String!): MovieResponse
+    getNowPlayingMovies(page: Int!, language: String!): MovieResponse
     getMovie(id: ID!, language: String!): Movie
     getSearchedMovie(
       query: String!
       language: String!
       page: Int!
-    ): [ShortMovie]
+    ): MovieResponse
   }
 `;
 

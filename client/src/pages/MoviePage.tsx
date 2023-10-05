@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { DocumentNode, useQuery } from '@apollo/client';
 
 import { MoviesList, MoviePagination } from '../components/index';
@@ -15,10 +15,14 @@ interface MoviPagePropsInterface {
 const MoviePage: React.FC<MoviPagePropsInterface> = (props) => {
   const [page, setPage] = useState(1);
 
+  useEffect(() => {
+    setPage(1);
+  }, [props.gqlQuery.type]);
+
   const { loading, error, data } = useQuery(props.gqlQuery.query, {
     variables: {
       language: 'en-US',
-      page: 1,
+      page: page,
       query: props.query,
     },
   });
@@ -27,12 +31,20 @@ const MoviePage: React.FC<MoviPagePropsInterface> = (props) => {
   if (error) {
     console.error(error);
   }
+
   console.log(data);
-  const movies = data ? data[props.gqlQuery.type] : [];
+
+  const movies = data ? data[props.gqlQuery.type].movies : [];
+  const pages = data
+    ? data[props.gqlQuery.type].total_pages > 20
+      ? 20
+      : data[props.gqlQuery.type].total_pages
+    : 0;
+
   return (
     <MoviePageContainer>
       <MoviesList movies={movies || []} />
-      <MoviePagination page={page} setPage={setPage} />
+      <MoviePagination page={page} pages={pages} setPage={setPage} />
     </MoviePageContainer>
   );
 };

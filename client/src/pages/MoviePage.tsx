@@ -1,20 +1,23 @@
 import React from 'react';
-import { useQuery } from '@apollo/client';
+import { DocumentNode, useQuery } from '@apollo/client';
 
 import { MoviesList } from '../components/index';
 import { MoviePageContainer } from '../styled/MoviePage';
 
-import { GET_MOVIES } from '../apolo/queries';
-
 interface MoviPagePropsInterface {
+  gqlQuery: {
+    query: DocumentNode;
+    type: string;
+  };
   query: string;
 }
 
 const MoviePage: React.FC<MoviPagePropsInterface> = (props) => {
-  const { loading, error, data } = useQuery(GET_MOVIES, {
+  const { loading, error, data } = useQuery(props.gqlQuery.query, {
     variables: {
       language: 'en-US',
       page: 1,
+      query: props.query,
     },
   });
 
@@ -23,10 +26,12 @@ const MoviePage: React.FC<MoviPagePropsInterface> = (props) => {
     console.error(error);
   }
 
+  const movies = data[props.gqlQuery.type];
+
   console.log({ ...data });
   return (
     <MoviePageContainer>
-      <MoviesList movies={data.getPopularMovies || []} />
+      <MoviesList movies={movies || []} />
     </MoviePageContainer>
   );
 };

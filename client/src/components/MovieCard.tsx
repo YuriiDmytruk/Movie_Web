@@ -16,7 +16,6 @@ interface MovieCardPropsInterface {
 }
 
 const MovieCard: React.FC<MovieCardPropsInterface> = (props) => {
-  console.log(props.movie);
   return (
     <Card sx={{ Height: 500 }}>
       <CardHeader

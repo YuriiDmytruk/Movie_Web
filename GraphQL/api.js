@@ -7,11 +7,17 @@ const URL = 'https://api.themoviedb.org/3/';
 const GET_POPULAR = 'GET_POPULAR';
 const GET_MOVIE = 'GET_MOVIE';
 const GET_BY_QUERY = 'GET_BY_QUERY';
+const GET_TOP_RATED = 'GET_TOP_RATED';
+const GET_NOW_PLAYING = 'GET_NOW_PLAYING';
 
 const createURL = (key, props) => {
   switch (key) {
     case GET_POPULAR:
       return `${URL}movie/popular?language=${props.language}&page=${props.page}`;
+    case GET_TOP_RATED:
+      return `${URL}movie/top_rated?language=${props.language}&page=${props.page}`;
+    case GET_NOW_PLAYING:
+      return `${URL}movie/now_playing?language=${props.language}&page=${props.page}`;
     case GET_MOVIE:
       return `${URL}movie/${props.id}?language=${props.language}`;
     case GET_BY_QUERY:
@@ -44,4 +50,6 @@ module.exports = {
   GET_POPULAR,
   GET_MOVIE,
   GET_BY_QUERY,
+  GET_TOP_RATED,
+  GET_NOW_PLAYING,
 };

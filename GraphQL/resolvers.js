@@ -4,6 +4,8 @@ const {
   GET_POPULAR,
   GET_MOVIE,
   GET_BY_QUERY,
+  GET_TOP_RATED,
+  GET_NOW_PLAYING,
 } = require('./api');
 
 const resolvers = {
@@ -15,7 +17,39 @@ const resolvers = {
           language: language,
         })
       );
-      return result.results;
+      const response = {
+        movies: result.results,
+        total_pages: result.total_pages,
+      };
+      return response;
+    },
+
+    getTopRatedMovies: async (parent, { page, language }, context) => {
+      const result = await fetchData(
+        createURL(GET_TOP_RATED, {
+          page: page,
+          language: language,
+        })
+      );
+      const response = {
+        movies: result.results,
+        total_pages: result.total_pages,
+      };
+      return response;
+    },
+
+    getNowPlayingMovies: async (parent, { page, language }, context) => {
+      const result = await fetchData(
+        createURL(GET_NOW_PLAYING, {
+          page: page,
+          language: language,
+        })
+      );
+      const response = {
+        movies: result.results,
+        total_pages: result.total_pages,
+      };
+      return response;
     },
 
     getMovie: async (parent, { id, language }, context) => {
@@ -33,7 +67,11 @@ const resolvers = {
           page: page,
         })
       );
-      return result.results;
+      const response = {
+        movies: result.results,
+        total_pages: result.total_pages,
+      };
+      return response;
     },
   },
 };

@@ -8,10 +8,10 @@ import {
   CardActions,
   Typography,
   Box,
+  Button,
 } from '@mui/material';
 
 import { MovieType } from '../../types';
-import { Button } from '@mui/material';
 
 interface MovieCardPropsInterface {
   movie: MovieType;

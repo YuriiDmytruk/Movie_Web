@@ -11,17 +11,25 @@ import {
   Typography,
   Box,
   Button,
+  ButtonGroup,
 } from '@mui/material';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { MoviePopUpColumns, ButtonToTheRight } from '../styled/MoviePopUp';
 
 import { GET_MOVIE } from '../apolo/queries';
+import { addMovie, deleteMovie } from '../redux/ducks/movies';
+import { MovieStateType } from '../../types';
 
 const MoviePopUp: React.FC = () => {
   const [show, setShow] = useState<boolean>(false);
+  const [isInStatistic, setIsInStatistic] = useState<boolean>(false);
   const { id } = useParams<{ id: string }>();
   const location = useLocation();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  //useSelector((state: MovieStateType) => state.movies) ?? [];
 
   useEffect(() => {
     if (id !== undefined) {
@@ -60,6 +68,14 @@ const MoviePopUp: React.FC = () => {
   }
   const movie = data.getMovie;
 
+  const onAddToStatisticsClick = () => {
+    dispatch(addMovie(movie));
+  };
+
+  const onDeleteFromStatisticsClick = () => {
+    dispatch(deleteMovie(movie.id));
+  };
+
   const formatRuntime = (minutes: number) =>
     `${Math.floor(minutes / 60)}.${minutes % 60}`;
 
@@ -83,7 +99,7 @@ const MoviePopUp: React.FC = () => {
               />
               <CardContent>
                 <Typography variant="body2">
-                  Overview:<p>{movie.overview}</p>
+                  Overview:<span>{movie.overview}</span>
                 </Typography>
               </CardContent>
               <CardContent>
@@ -121,9 +137,17 @@ const MoviePopUp: React.FC = () => {
               <Box sx={{ flexGrow: 1 }} />
               <CardActions disableSpacing>
                 <ButtonToTheRight>
-                  <Button color="error" onClick={handleClose}>
-                    Close
-                  </Button>
+                  <ButtonGroup variant="text" aria-label="text button group">
+                    <Button onClick={onAddToStatisticsClick}>
+                      Add to statistics
+                    </Button>
+                    <Button color="error" onClick={onDeleteFromStatisticsClick}>
+                      Delete from statistics
+                    </Button>
+                    <Button color="error" onClick={handleClose}>
+                      Close
+                    </Button>
+                  </ButtonGroup>
                 </ButtonToTheRight>
               </CardActions>
             </div>

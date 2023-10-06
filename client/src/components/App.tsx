@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 
 import MoviePage from '../pages/MoviesPage';
-import { NavBar } from './index';
+import { MoviePopUp, NavBar } from './index';
 
 import { GET_NOW_PLAYING, GET_NOW_PLAYING_TYPE } from '../apolo/queries';
 
@@ -15,7 +16,25 @@ const App = () => {
   return (
     <>
       <NavBar setgqlQuery={setgqlQuery} setQuery={setQuery} />
-      <MoviePage gqlQuery={gqlQuery} query={query} />
+      <Routes>
+        <Route
+          path="/"
+          element={<MoviePage gqlQuery={gqlQuery} query={query} />}
+        />
+        <Route
+          path="/movie/:id"
+          element={
+            <>
+              <MoviePage gqlQuery={gqlQuery} query={query} />
+              <MoviePopUp />
+            </>
+          }
+        />
+        <Route
+          path="*"
+          element={<MoviePage gqlQuery={gqlQuery} query={query} />}
+        />
+      </Routes>
     </>
   );
 };

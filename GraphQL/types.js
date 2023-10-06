@@ -31,7 +31,7 @@ const typeDefs = gql`
 
   type Company {
     id: ID!
-    logo_path: String!
+    logo_path: String
     name: String
     origin_country: String!
   }

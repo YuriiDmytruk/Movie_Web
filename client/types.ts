@@ -8,25 +8,25 @@ export type MovieType = {
 }
 
 export type MovieDetailsType = {
-  id: number,
-      adult: boolean,
-      budget: number,
-      genres: {
-        id: number,
-        name: string,
-      }
-      poster_path: string,
-      original_title: string,
-      popularity: string,
-      overview: string,
-      production_companies: {
-        name: [string],
-      },
-      production_countries: {
-        name: [string],
-      },
-      release_date: string,
-      runtime: number,
+  id: string,
+  adult: boolean,
+  budget: number,
+  genres: {
+    id: number,
+    name: string,
+  }
+  poster_path: string,
+  original_title: string,
+  popularity: string,
+  overview: string,
+  production_companies: {
+    name: [string],
+  },
+  production_countries: {
+    name: [string],
+  },
+  release_date: string,
+  runtime: number,
 }
 
 export type MovieStateType = {

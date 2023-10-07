@@ -23,13 +23,14 @@ import { MovieStateType } from '../../types';
 
 const MoviePopUp: React.FC = () => {
   const [show, setShow] = useState<boolean>(false);
-  const [isInStatistic, setIsInStatistic] = useState<boolean>(false);
   const { id } = useParams<{ id: string }>();
   const location = useLocation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
-  //useSelector((state: MovieStateType) => state.movies) ?? [];
+  const isNotInStatistic =
+    useSelector((state: MovieStateType) => state.movies).filter(
+      (movie) => parseInt(movie.id) === parseInt(id!)
+    ).length > 0;
 
   useEffect(() => {
     if (id !== undefined) {
@@ -138,10 +139,17 @@ const MoviePopUp: React.FC = () => {
               <CardActions disableSpacing>
                 <ButtonToTheRight>
                   <ButtonGroup variant="text" aria-label="text button group">
-                    <Button onClick={onAddToStatisticsClick}>
+                    <Button
+                      disabled={isNotInStatistic}
+                      onClick={onAddToStatisticsClick}
+                    >
                       Add to statistics
                     </Button>
-                    <Button color="error" onClick={onDeleteFromStatisticsClick}>
+                    <Button
+                      disabled={!isNotInStatistic}
+                      color="error"
+                      onClick={onDeleteFromStatisticsClick}
+                    >
                       Delete from statistics
                     </Button>
                     <Button color="error" onClick={handleClose}>

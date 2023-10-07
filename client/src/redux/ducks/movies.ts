@@ -1,7 +1,7 @@
 import { MovieStateType, MovieDetailsType,deleteMovieType, addMovieType } from '../../../types';
 
-export const ADD_MOVIE = 'ADD_JOKES';
-export const DELETE_MOVIE = 'DELETE_JOKE'
+export const ADD_MOVIE = 'ADD_MOVIE';
+export const DELETE_MOVIE = 'DELETE_MOVIE'
 
 const defaultState: MovieStateType = {
   movies: JSON.parse(localStorage.getItem('MOVIES') || '[]')

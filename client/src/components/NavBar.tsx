@@ -8,6 +8,7 @@ import {
   ListItemText,
 } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
+import { useNavigate } from 'react-router-dom';
 
 import { Search, SearchIconWrapper, StyledInputBase } from '../styled/NavBar';
 
@@ -29,6 +30,7 @@ interface NavBarPropsInterfce {
 }
 const NavBar: React.FC<NavBarPropsInterfce> = (props) => {
   const [search, setSearch] = useState('');
+  const navigate = useNavigate();
 
   const onCangeSearch = (value: string) => {
     setSearch(value);
@@ -50,6 +52,9 @@ const NavBar: React.FC<NavBarPropsInterfce> = (props) => {
     props.setgqlQuery({ query: SEARCH_MOVIE, type: SEARCH_MOVIE_TYPE });
     props.setQuery(search);
   };
+  const onStatisticClick = () => {
+    navigate('/statistic');
+  };
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -63,7 +68,7 @@ const NavBar: React.FC<NavBarPropsInterfce> = (props) => {
               },
               textAlign: 'center',
               flexDirection: 'row',
-              width: '500px',
+              width: '650px',
             }}
           >
             <ListItem key="Now Playing">
@@ -88,6 +93,14 @@ const NavBar: React.FC<NavBarPropsInterfce> = (props) => {
                 sx={{ textAlign: 'center' }}
               >
                 <ListItemText primary="Top Rated" />
+              </ListItemButton>
+            </ListItem>
+            <ListItem key="Statistic">
+              <ListItemButton
+                sx={{ textAlign: 'Statistic' }}
+                onClick={onStatisticClick}
+              >
+                <ListItemText primary="Statistic" />
               </ListItemButton>
             </ListItem>
           </Box>

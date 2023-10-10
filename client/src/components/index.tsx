@@ -4,6 +4,7 @@ import MovieCard from './MovieCard';
 import MoviePagination from './MoviePagination';
 import MoviePopUp from './MoviePopUp';
 import MovieStatistics from './MovieStatistics';
+import MovieChart from './MovieChart';
 
 export {
   NavBar,
@@ -12,4 +13,5 @@ export {
   MoviePagination,
   MoviePopUp,
   MovieStatistics,
+  MovieChart,
 };

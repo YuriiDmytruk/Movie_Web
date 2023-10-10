@@ -59,6 +59,8 @@ const NavBar: React.FC<NavBarPropsInterfce> = (props) => {
 
   const onStatisticClick = () => navigate('/statistic');
 
+  const onChartClick = () => navigate('/chart');
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -71,7 +73,7 @@ const NavBar: React.FC<NavBarPropsInterfce> = (props) => {
               },
               textAlign: 'center',
               flexDirection: 'row',
-              width: '650px',
+              width: '780px',
             }}
           >
             <ListItem key="Now Playing">
@@ -104,6 +106,14 @@ const NavBar: React.FC<NavBarPropsInterfce> = (props) => {
                 onClick={onStatisticClick}
               >
                 <ListItemText primary="Statistic" />
+              </ListItemButton>
+            </ListItem>
+            <ListItem key="Chart">
+              <ListItemButton
+                sx={{ textAlign: 'Chart' }}
+                onClick={onChartClick}
+              >
+                <ListItemText primary="Chart" />
               </ListItemButton>
             </ListItem>
           </Box>

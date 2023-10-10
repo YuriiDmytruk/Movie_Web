@@ -8,26 +8,22 @@ import {
   CardActions,
   Typography,
   Box,
+  Button,
 } from '@mui/material';
 
+import { cardStyle } from '../styled/MovieCard';
 import { MovieType } from '../../types';
-import { Button } from '@mui/material';
 
 interface MovieCardPropsInterface {
   movie: MovieType;
 }
-const MAX_OVERVIE_LENGHT = 215;
-const MAX_TITLE_LENGHT = 23;
+const MAX_OVERVIE_LENGHT: number = 215;
+const MAX_TITLE_LENGHT: number = 23;
+const IMAGE_PASS: string = 'https://image.tmdb.org/t/p/original';
 
 const MovieCard: React.FC<MovieCardPropsInterface> = (props) => {
   const cutOverview = (input: string, maxChars: number) =>
     input.length <= maxChars ? input : input.slice(0, maxChars) + '...';
-
-  const cardStyle: React.CSSProperties = {
-    height: '700px',
-    display: 'flex',
-    flexDirection: 'column',
-  };
 
   return (
     <Card style={cardStyle}>
@@ -38,7 +34,7 @@ const MovieCard: React.FC<MovieCardPropsInterface> = (props) => {
       <CardMedia
         component="img"
         height="400"
-        image={'https://image.tmdb.org/t/p/original' + props.movie.poster_path}
+        image={IMAGE_PASS + props.movie.poster_path}
         alt={props.movie.title}
       />
       <CardContent>

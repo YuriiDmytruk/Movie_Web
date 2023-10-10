@@ -1,6 +1,5 @@
 const { gql } = require('apollo-server');
 
-// Short Movie is a array so create object with array field and number of pages!!!!!!!
 const typeDefs = gql`
   type MovieResponse {
     movies: [ShortMovie]

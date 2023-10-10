@@ -37,14 +37,20 @@ const NavBar: React.FC<NavBarPropsInterfce> = (props) => {
     setSearch(value);
   };
 
-  const onNowPlayingClick = () =>
+  const onNowPlayingClick = () => {
     props.setgqlQuery({ query: GET_NOW_PLAYING, type: GET_NOW_PLAYING_TYPE });
+    navigate('/');
+  };
 
-  const onPopularClick = () =>
+  const onPopularClick = () => {
     props.setgqlQuery({ query: GET_POPULAR, type: GET_POPULAR_TYPE });
+    navigate('/');
+  };
 
-  const onTopRatedClick = () =>
+  const onTopRatedClick = () => {
     props.setgqlQuery({ query: GET_TOP_RATED, type: GET_TOP_RATED_TYPE });
+    navigate('/');
+  };
 
   const onSearchClick = () => {
     props.setgqlQuery({ query: SEARCH_MOVIE, type: SEARCH_MOVIE_TYPE });

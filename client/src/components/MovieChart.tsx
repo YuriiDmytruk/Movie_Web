@@ -133,6 +133,4 @@ const MovieChart: React.FC = () => {
   );
 };
 
-//<Pie data={createDataForPie()} />
-
 export default MovieChart;

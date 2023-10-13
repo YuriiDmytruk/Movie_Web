@@ -1,5 +1,5 @@
 import NavBar from './NavBar';
-import MoviesList from './MoviesList';
+import MoviesList from './MovieList';
 import MovieCard from './MovieCard';
 import MoviePagination from './MoviePagination';
 import MoviePopUp from './MoviePopUp';

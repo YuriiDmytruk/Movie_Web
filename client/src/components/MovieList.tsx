@@ -5,7 +5,7 @@ import { MovieCard } from './index';
 
 import { MovieType } from '../../types';
 
-interface MovieListPropsInterface {
+export interface MovieListPropsInterface {
   movies: [MovieType];
 }
 

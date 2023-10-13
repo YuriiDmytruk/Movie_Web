@@ -32,7 +32,7 @@ ChartJS.register(
   Legend
 );
 
-const MovieChart: React.FC = () => {
+const MovieChartPage: React.FC = () => {
   const [isBarSelected, setIsBarSelected] = useState(true);
   const movies = useSelector((state: MovieStateType) => state.movies);
 
@@ -133,4 +133,4 @@ const MovieChart: React.FC = () => {
   );
 };
 
-export default MovieChart;
+export default MovieChartPage;

@@ -38,7 +38,7 @@ import { useDispatch } from 'react-redux';
 import { MovieStateType, MovieDetailsType } from '../../types';
 import { deleteMovie } from '../redux/ducks/movies';
 
-const MovieStatistics: React.FC = () => {
+const MovieStatisticsPage: React.FC = () => {
   const [columns] = useState([
     { name: 'original_title', title: 'Title' },
     {
@@ -166,4 +166,4 @@ const MovieStatistics: React.FC = () => {
   );
 };
 
-export default MovieStatistics;
+export default MovieStatisticsPage;

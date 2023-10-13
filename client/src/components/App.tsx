@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import MoviePage from '../pages/MoviesPage';
-import { MovieChart, MoviePopUp, MovieStatistics, NavBar } from './index';
+import { MoviePopUp, NavBar } from './index';
+import MovieChartPage from '../pages/MovieChartPage';
+import MovieStatisticsPage from '../pages/MovieStatisticsPage';
 
 import { GET_NOW_PLAYING, GET_NOW_PLAYING_TYPE } from '../apolo/queries';
 
@@ -21,8 +23,8 @@ const App = () => {
           path="/"
           element={<MoviePage gqlQuery={gqlQuery} query={query} />}
         />
-        <Route path="/statistic" element={<MovieStatistics />} />
-        <Route path="/chart" element={<MovieChart />} />
+        <Route path="/statistic" element={<MovieStatisticsPage />} />
+        <Route path="/chart" element={<MovieChartPage />} />
         <Route
           path="/movie/:id"
           element={

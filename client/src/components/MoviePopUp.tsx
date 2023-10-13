@@ -69,7 +69,8 @@ const MoviePopUp: React.FC = () => {
   if (error) {
     console.error(error);
   }
-  const movie = data.getMovie;
+  console.log(data);
+  const movie = data.getMovie || {};
 
   const onAddToStatisticsClick = () => dispatch(addMovie(movie));
 

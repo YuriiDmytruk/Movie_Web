@@ -24,7 +24,7 @@ import {
   SEARCH_MOVIE_TYPE,
 } from '../apolo/queries';
 
-interface NavBarPropsInterfce {
+export interface NavBarPropsInterfce {
   setQuery: (query: string) => void;
   setgqlQuery: (queryObject: { query: DocumentNode; type: string }) => void;
 }

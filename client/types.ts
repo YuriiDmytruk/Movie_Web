@@ -11,20 +11,20 @@ export type MovieDetailsType = {
   id: string,
   adult: boolean,
   budget: number,
-  genres: [{
+  genres: {
     id: number,
     name: string,
-  }],
+  }[],
   poster_path: string,
   original_title: string,
   popularity: string,
   overview: string,
-  production_companies: [{
+  production_companies: {
     name: string,
-  }],
-  production_countries: [{
+  }[],
+  production_countries: {
     name: string,
-  }],
+  }[],
   release_date: string,
   runtime: number,
 }

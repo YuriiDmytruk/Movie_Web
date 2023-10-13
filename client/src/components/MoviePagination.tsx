@@ -3,7 +3,7 @@ import Pagination from '@mui/material/Pagination';
 
 import { PaginationStyled } from '../styled/MoviePagination';
 
-interface MoviePaginationInterfce {
+export interface MoviePaginationInterfce {
   setPage: (page: number) => void;
   pages: number;
   page: number;

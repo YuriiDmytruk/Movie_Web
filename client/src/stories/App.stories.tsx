@@ -4,26 +4,26 @@ import { BrowserRouter } from 'react-router-dom';
 import { createStore } from 'redux';
 import { MockedProvider } from '@apollo/client/testing';
 
-import MoviesPage, { MoviPagePropsInterface } from '../pages/MoviesPage';
+import App from '../components/App';
 
 import { moviesReducer } from '../redux/ducks/movies';
 import { movies } from './testDataMovies';
 import { detailMovies } from './testDataDetailMovies';
-import { GET_POPULAR, GET_POPULAR_TYPE } from '../apolo/queries';
+import { GET_NOW_PLAYING } from '../apolo/queries';
 
 const mocks = [
   {
     request: {
-      query: GET_POPULAR,
+      query: GET_NOW_PLAYING,
       variables: {
         language: 'en-US',
         page: 1,
-        query: 'string',
+        query: '',
       },
     },
     result: {
       data: {
-        getPopularMovies: {
+        getNowPlayingMovies: {
           movies: movies.movies,
           total_pages: 1,
         },
@@ -35,8 +35,8 @@ const mocks = [
 const store = createStore(moviesReducer, detailMovies);
 
 const meta = {
-  title: 'MoviesPage',
-  component: MoviesPage,
+  title: 'App',
+  component: App,
   decorators: [
     (Story) => (
       <Provider store={store}>
@@ -57,14 +57,6 @@ const meta = {
 
 export default meta;
 
-export const Popular: StoryObj = (args: MoviPagePropsInterface) => (
-  <MoviesPage {...args} />
-);
+export const Popular: StoryObj = () => <App />;
 
-Popular.args = {
-  gqlQuery: {
-    query: GET_POPULAR,
-    type: GET_POPULAR_TYPE,
-  },
-  query: 'string',
-};
+Popular.args = {};

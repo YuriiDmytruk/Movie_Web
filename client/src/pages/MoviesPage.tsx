@@ -4,7 +4,7 @@ import { DocumentNode, useQuery } from '@apollo/client';
 import { MoviesList, MoviePagination } from '../components/index';
 import { MoviePageContainer } from '../styled/MoviePage';
 
-interface MoviPagePropsInterface {
+export interface MoviPagePropsInterface {
   gqlQuery: {
     query: DocumentNode;
     type: string;
@@ -33,6 +33,8 @@ const MoviePage: React.FC<MoviPagePropsInterface> = (props) => {
   }
 
   const movies = data ? data[props.gqlQuery.type].movies : [];
+  console.log(movies);
+  console.log(data[props.gqlQuery.type].total_pages);
   const pages = data
     ? data[props.gqlQuery.type].total_pages > 20
       ? 20

@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { createStore } from 'redux';
 
-import MovieChartPage from '../pages/MovieChartPage';
+import MovieStatisticsPage from '../pages/MovieStatisticsPage';
 
 import { moviesReducer } from '../redux/ducks/movies';
 import { detailMovies } from './testDataDetailMovies';
@@ -11,8 +11,8 @@ import { detailMovies } from './testDataDetailMovies';
 const store = createStore(moviesReducer, detailMovies);
 
 const meta = {
-  title: 'MovieChartPage',
-  component: MovieChartPage,
+  title: 'MovieStatisticsPage',
+  component: MovieStatisticsPage,
   decorators: [
     (Story) => (
       <Provider store={store}>
@@ -31,6 +31,6 @@ const meta = {
 
 export default meta;
 
-export const Normal: StoryObj = () => <MovieChartPage />;
+export const Normal: StoryObj = () => <MovieStatisticsPage />;
 
 Normal.args = {};

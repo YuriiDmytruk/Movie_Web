@@ -7,7 +7,7 @@ import { MoviePopUp } from '../components/index';
 
 import { GET_MOVIE } from '../apolo/queries';
 import { store } from '../redux/store';
-import { initialState } from './storyStoreData';
+import { detailMovies } from './testDataDetailMovies';
 
 const mocks = [
   {
@@ -20,7 +20,7 @@ const mocks = [
     },
     result: {
       data: {
-        getMovie: initialState.movies[0],
+        getMovie: detailMovies.movies[0],
       },
     },
   },

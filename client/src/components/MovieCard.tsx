@@ -22,8 +22,12 @@ const MAX_TITLE_LENGHT: number = 23;
 const IMAGE_PASS: string = 'https://image.tmdb.org/t/p/original';
 
 const MovieCard: React.FC<MovieCardPropsInterface> = (props) => {
-  const cutOverview = (input: string, maxChars: number) =>
-    input.length <= maxChars ? input : input.slice(0, maxChars) + '...';
+  const cutOverview = (input: string, maxChars: number) => {
+    console.log(input);
+    return input.length <= maxChars ? input : input.slice(0, maxChars) + '...';
+  };
+
+  console.log(props);
 
   return (
     <Card style={cardStyle}>

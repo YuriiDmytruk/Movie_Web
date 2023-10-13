@@ -57,11 +57,11 @@ const meta = {
 
 export default meta;
 
-export const Popular: StoryObj = (args: MoviPagePropsInterface) => (
+export const Standart: StoryObj = (args: MoviPagePropsInterface) => (
   <MoviesPage {...args} />
 );
 
-Popular.args = {
+Standart.args = {
   gqlQuery: {
     query: GET_POPULAR,
     type: GET_POPULAR_TYPE,

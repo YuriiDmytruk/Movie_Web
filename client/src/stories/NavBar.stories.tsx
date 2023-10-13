@@ -4,8 +4,10 @@ import { BrowserRouter } from 'react-router-dom';
 import { createStore } from 'redux';
 import { MockedProvider } from '@apollo/client/testing';
 
-import App from '../components/App';
+import { NavBar } from '../components/index';
+import { NavBarPropsInterfce } from '../components/NavBar';
 
+import { DocumentNode } from '@apollo/client';
 import { moviesReducer } from '../redux/ducks/movies';
 import { movies } from './testDataMovies';
 import { detailMovies } from './testDataDetailMovies';
@@ -35,8 +37,8 @@ const mocks = [
 const store = createStore(moviesReducer, detailMovies);
 
 const meta = {
-  title: 'App',
-  component: App,
+  title: 'MoviePage/NavBar',
+  component: NavBar,
   decorators: [
     (Story) => (
       <Provider store={store}>
@@ -57,6 +59,11 @@ const meta = {
 
 export default meta;
 
-export const Standart: StoryObj = () => <App />;
+export const Standart: StoryObj = (args: NavBarPropsInterfce) => (
+  <NavBar {...args} />
+);
 
-Standart.args = {};
+Standart.args = {
+  setQuery: (query: string) => {},
+  setgqlQuery: (queryObject: { query: DocumentNode; type: string }) => {},
+};

@@ -49,6 +49,6 @@ const meta = {
 
 export default meta;
 
-export const Normal: StoryObj = () => <MoviePopUp />;
+export const Standart: StoryObj = () => <MoviePopUp />;
 
-Normal.args = {};
+Standart.args = {};

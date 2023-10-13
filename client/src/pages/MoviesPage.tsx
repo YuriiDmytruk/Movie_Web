@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { DocumentNode, useQuery } from '@apollo/client';
 
-import { MoviesList, MoviePagination } from '../components/index';
+import { MovieList, MoviePagination } from '../components/index';
 import { MoviePageContainer } from '../styled/MoviePage';
 
 export interface MoviPagePropsInterface {
@@ -43,7 +43,7 @@ const MoviePage: React.FC<MoviPagePropsInterface> = (props) => {
 
   return (
     <MoviePageContainer>
-      <MoviesList movies={movies || []} />
+      <MovieList movies={movies || []} />
       {data && movies.length !== 0 ? (
         <MoviePagination page={page} pages={pages} setPage={setPage} />
       ) : (

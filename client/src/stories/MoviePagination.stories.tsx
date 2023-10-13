@@ -17,11 +17,11 @@ const meta = {
 
 export default meta;
 
-export const Popular: StoryObj = (args: MoviePaginationInterfce) => (
+export const Standart: StoryObj = (args: MoviePaginationInterfce) => (
   <MoviePagination {...args} />
 );
 
-Popular.args = {
+Standart.args = {
   setPage: () => {},
   pages: 20,
   page: 1,

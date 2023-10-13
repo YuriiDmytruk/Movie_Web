@@ -38,11 +38,11 @@ type MovieCardProps = {
   };
 };
 
-export const Normal: StoryObj<MovieCardProps> = (args: any) => (
+export const Standart: StoryObj<MovieCardProps> = (args: any) => (
   <MovieCard {...args} />
 );
 
-Normal.args = {
+Standart.args = {
   movie: {
     adult: false,
     id: 0,

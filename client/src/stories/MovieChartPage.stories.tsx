@@ -31,6 +31,6 @@ const meta = {
 
 export default meta;
 
-export const Normal: StoryObj = () => <MovieChartPage />;
+export const Standart: StoryObj = () => <MovieChartPage />;
 
-Normal.args = {};
+Standart.args = {};

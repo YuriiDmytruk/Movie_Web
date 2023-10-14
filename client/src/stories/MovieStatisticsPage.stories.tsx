@@ -6,7 +6,7 @@ import { createStore } from 'redux';
 import MovieStatisticsPage from '../pages/MovieStatisticsPage';
 
 import { moviesReducer } from '../redux/ducks/movies';
-import { detailMovies } from './testDataDetailMovies';
+import { detailMovies } from '../util/Data/testDataDetailMovies';
 
 const store = createStore(moviesReducer, detailMovies);
 

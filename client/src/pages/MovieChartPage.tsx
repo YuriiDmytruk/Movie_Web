@@ -111,7 +111,7 @@ const MovieChartPage: React.FC = () => {
   const getRandom0_255 = () => Math.floor(Math.random() * 256);
 
   return (
-    <MovieCardStyled>
+    <MovieCardStyled data-testid="chart-page">
       <ButtonGroup>
         <Button variant="contained" onClick={() => setIsBarSelected(false)}>
           Check popularity of genres

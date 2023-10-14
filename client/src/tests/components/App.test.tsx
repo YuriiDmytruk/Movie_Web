@@ -1,6 +1,12 @@
 import React from 'react';
 import { screen } from '@testing-library/dom';
-import { fireEvent, render, waitFor, within } from '@testing-library/react';
+import {
+  fireEvent,
+  prettyDOM,
+  render,
+  waitFor,
+  within,
+} from '@testing-library/react';
 import { MockedProvider } from '@apollo/client/testing';
 import '@testing-library/jest-dom';
 import 'resize-observer-polyfill';
@@ -14,6 +20,7 @@ import {
   GET_POPULAR,
   GET_TOP_RATED,
   SEARCH_MOVIE,
+  GET_MOVIE,
 } from '../../apolo/queries';
 
 global.ResizeObserver = class {
@@ -174,6 +181,34 @@ const mocks = [
       },
     },
   },
+  {
+    request: {
+      query: GET_MOVIE,
+      variables: {
+        language: 'en-US',
+        id: '1',
+      },
+    },
+    result: {
+      data: {
+        getMovie: {
+          id: '1',
+          adult: false,
+          budget: 0,
+          genres: [],
+          poster_path: '',
+          original_title: 'GET_MOVIE',
+          popularity: '',
+          overview: '',
+          production_companies: [],
+          production_countries: [],
+          release_date: '',
+          runtime: 0,
+        },
+        total_pages: 1,
+      },
+    },
+  },
 ];
 
 describe('Test NavBar buttons', () => {
@@ -305,5 +340,29 @@ describe('Test NavBar buttons', () => {
     });
 
     expect(screen.getByText('SEARCH_MOVIE')).toBeInTheDocument();
+  });
+});
+
+describe('Test button in MovieCard', () => {
+  it('should open popup when check button in MovieCard is clicked', async () => {
+    const testWrapperArgs = {
+      TestComponent: App,
+    };
+
+    const { asFragment } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <TestWrapper {...testWrapperArgs} />
+      </MockedProvider>
+    );
+
+    await waitFor(() => {
+      expect(screen.getByTestId('movie-page')).toBeInTheDocument();
+    });
+
+    fireEvent.click(screen.getByTestId('card-check'));
+
+    await waitFor(() => {
+      expect(screen.getByTestId('popup')).toBeInTheDocument();
+    });
   });
 });

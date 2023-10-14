@@ -247,6 +247,7 @@ exports[`should render App component and match snapshot 1`] = `
             class="MuiCardActions-root css-1rwjz6-MuiCardActions-root"
           >
             <a
+              data-testid="card-check"
               href="/movie/1"
             >
               <button
@@ -307,6 +308,7 @@ exports[`should render App component and match snapshot 1`] = `
             class="MuiCardActions-root css-1rwjz6-MuiCardActions-root"
           >
             <a
+              data-testid="card-check"
               href="/movie/2"
             >
               <button
@@ -367,6 +369,7 @@ exports[`should render App component and match snapshot 1`] = `
             class="MuiCardActions-root css-1rwjz6-MuiCardActions-root"
           >
             <a
+              data-testid="card-check"
               href="/movie/3"
             >
               <button
@@ -427,6 +430,7 @@ exports[`should render App component and match snapshot 1`] = `
             class="MuiCardActions-root css-1rwjz6-MuiCardActions-root"
           >
             <a
+              data-testid="card-check"
               href="/movie/4"
             >
               <button
@@ -487,6 +491,7 @@ exports[`should render App component and match snapshot 1`] = `
             class="MuiCardActions-root css-1rwjz6-MuiCardActions-root"
           >
             <a
+              data-testid="card-check"
               href="/movie/5"
             >
               <button
@@ -547,6 +552,7 @@ exports[`should render App component and match snapshot 1`] = `
             class="MuiCardActions-root css-1rwjz6-MuiCardActions-root"
           >
             <a
+              data-testid="card-check"
               href="/movie/6"
             >
               <button
@@ -607,6 +613,7 @@ exports[`should render App component and match snapshot 1`] = `
             class="MuiCardActions-root css-1rwjz6-MuiCardActions-root"
           >
             <a
+              data-testid="card-check"
               href="/movie/7"
             >
               <button
@@ -667,6 +674,7 @@ exports[`should render App component and match snapshot 1`] = `
             class="MuiCardActions-root css-1rwjz6-MuiCardActions-root"
           >
             <a
+              data-testid="card-check"
               href="/movie/8"
             >
               <button
@@ -727,6 +735,7 @@ exports[`should render App component and match snapshot 1`] = `
             class="MuiCardActions-root css-1rwjz6-MuiCardActions-root"
           >
             <a
+              data-testid="card-check"
               href="/movie/9"
             >
               <button
@@ -787,6 +796,7 @@ exports[`should render App component and match snapshot 1`] = `
             class="MuiCardActions-root css-1rwjz6-MuiCardActions-root"
           >
             <a
+              data-testid="card-check"
               href="/movie/10"
             >
               <button
@@ -847,6 +857,7 @@ exports[`should render App component and match snapshot 1`] = `
             class="MuiCardActions-root css-1rwjz6-MuiCardActions-root"
           >
             <a
+              data-testid="card-check"
               href="/movie/762430"
             >
               <button
@@ -907,6 +918,7 @@ exports[`should render App component and match snapshot 1`] = `
             class="MuiCardActions-root css-1rwjz6-MuiCardActions-root"
           >
             <a
+              data-testid="card-check"
               href="/movie/346698"
             >
               <button

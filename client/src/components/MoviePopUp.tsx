@@ -80,7 +80,7 @@ const MoviePopUp: React.FC = () => {
     `${Math.floor(minutes / 60)}.${minutes % 60}`;
 
   return (
-    <Modal open={show} onClose={handleClose}>
+    <Modal open={show} onClose={handleClose} data-testid="popup">
       <ModalDialog color="success" layout="center" size="lg" variant="outlined">
         <ModalClose />
 
@@ -139,12 +139,14 @@ const MoviePopUp: React.FC = () => {
                 <ButtonToTheRight>
                   <ButtonGroup variant="text" aria-label="text button group">
                     <Button
+                      data-testid="popup-add"
                       disabled={isNotInStatistic}
                       onClick={onAddToStatisticsClick}
                     >
                       Add to statistics
                     </Button>
                     <Button
+                      data-testid="popup-delete"
                       disabled={!isNotInStatistic}
                       color="error"
                       onClick={onDeleteFromStatisticsClick}

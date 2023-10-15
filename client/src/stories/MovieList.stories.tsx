@@ -1,3 +1,4 @@
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';

@@ -23,8 +23,12 @@ import { MovieStateType } from '../../types';
 
 const IMAGE_PASS: string = 'https://image.tmdb.org/t/p/original';
 
-const MoviePopUp: React.FC = () => {
-  const [show, setShow] = useState<boolean>(false);
+export interface MoviePopUpPropsInterface {
+  isShow?: boolean;
+}
+
+const MoviePopUp: React.FC<MoviePopUpPropsInterface> = (props) => {
+  const [show, setShow] = useState<boolean>(Boolean(props.isShow));
   const { id } = useParams<{ id: string }>();
   const location = useLocation();
   const navigate = useNavigate();

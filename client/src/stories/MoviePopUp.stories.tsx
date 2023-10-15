@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { MockedProvider } from '@apollo/client/testing';
 
-import { MoviePopUp } from '../components/index';
+import MoviePopUp, { MoviePopUpPropsInterface } from '../components/MoviePopUp';
 
 import { GET_MOVIE } from '../apolo/queries';
 import { store } from '../redux/store';
@@ -50,6 +50,10 @@ const meta = {
 
 export default meta;
 
-export const Standart: StoryObj = () => <MoviePopUp />;
+export const Standart: StoryObj = (args: MoviePopUpPropsInterface) => (
+  <MoviePopUp {...args} />
+);
 
-Standart.args = {};
+Standart.args = {
+  isShow: true,
+};

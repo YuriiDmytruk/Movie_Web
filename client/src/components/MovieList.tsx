@@ -6,7 +6,7 @@ import { MovieCard } from './index';
 import { MovieType } from '../../types';
 
 export interface MovieListPropsInterface {
-  movies: [MovieType];
+  movies: MovieType[];
 }
 
 const MovieList: React.FC<MovieListPropsInterface> = (props) => {

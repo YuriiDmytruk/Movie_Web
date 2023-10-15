@@ -9,7 +9,6 @@ import {
 } from '@testing-library/react';
 import { MockedProvider } from '@apollo/client/testing';
 import '@testing-library/jest-dom';
-import 'resize-observer-polyfill';
 
 import App from '../../components/App';
 

@@ -1,3 +1,4 @@
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
@@ -9,8 +10,8 @@ import { NavBarPropsInterfce } from '../components/NavBar';
 
 import { DocumentNode } from '@apollo/client';
 import { moviesReducer } from '../redux/ducks/movies';
-import { movies } from './testDataMovies';
-import { detailMovies } from './testDataDetailMovies';
+import { movies } from '../util/Data/testDataMovies';
+import { detailMovies } from '../util/Data/testDataDetailMovies';
 import { GET_NOW_PLAYING } from '../apolo/queries';
 
 const mocks = [

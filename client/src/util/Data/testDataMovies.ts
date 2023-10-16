@@ -1,7 +1,7 @@
 export const movies = {
   movies: [
   {
-    id: "1",
+    id: 1,
     adult: false,
     poster_path: '/uQxjZGU6rxSPSMeAJPJQlmfV3ys.jpg',
     title: "After Everything",
@@ -9,7 +9,7 @@ export const movies = {
     release_date: "2023-09-13",
   },
   {
-    id: "2",
+    id: 2,
     adult: false,
     poster_path: '/uQxjZGU6rxSPSMeAJPJQlmfV3ys.jpg',
     title: "Retribution",
@@ -17,7 +17,7 @@ export const movies = {
     release_date: "2023-08-23",
   },
   {
-    id: "3",
+    id: 3,
     adult: false,
     poster_path: '/uQxjZGU6rxSPSMeAJPJQlmfV3ys.jpg',
     title: "Barbie",
@@ -25,7 +25,7 @@ export const movies = {
     release_date: "2023-07-19",
     },
   {
-    id: "4",
+    id: 4,
     adult: false,
     poster_path: '/uQxjZGU6rxSPSMeAJPJQlmfV3ys.jpg',
     title: "After Everything",
@@ -34,7 +34,7 @@ export const movies = {
     
   },
   {
-    id: "5",
+    id:5,
     adult: false,
     poster_path: '/uQxjZGU6rxSPSMeAJPJQlmfV3ys.jpg',
     title: "Retribution",
@@ -43,7 +43,7 @@ export const movies = {
     release_date: "2023-08-23",
   },
   {
-    id: "6",
+    id: 6,
     adult: false,
     poster_path: '/uQxjZGU6rxSPSMeAJPJQlmfV3ys.jpg',
     title: "Barbie",
@@ -51,7 +51,7 @@ export const movies = {
     release_date: "2023-07-19",
     },
   {
-    id: "7",
+    id:7,
     adult: false,
     poster_path: '/uQxjZGU6rxSPSMeAJPJQlmfV3ys.jpg',
     title: "After Everything",
@@ -59,7 +59,7 @@ export const movies = {
     release_date: "2023-09-13",
   },
   {
-    id: "8",
+    id: 8,
     adult: false,
     poster_path: '/uQxjZGU6rxSPSMeAJPJQlmfV3ys.jpg',
     title: "Retribution",
@@ -67,7 +67,7 @@ export const movies = {
     release_date: "2023-08-23",  
   },
   {
-    id: "9",
+    id: 9,
     adult: false,
     poster_path: '/uQxjZGU6rxSPSMeAJPJQlmfV3ys.jpg',
     title: "Barbie",
@@ -75,7 +75,7 @@ export const movies = {
     release_date: "2023-07-19",
     },
   {
-    id: "10",
+    id: 10,
     adult: false,
     poster_path: '/uQxjZGU6rxSPSMeAJPJQlmfV3ys.jpg',
     title: "After Everything",
@@ -83,7 +83,7 @@ export const movies = {
     release_date: "2023-09-13",
   },
   {
-    id: "762430",
+    id: 762430,
     adult: false,
     poster_path: '/uQxjZGU6rxSPSMeAJPJQlmfV3ys.jpg',
     title: "Retribution",
@@ -91,7 +91,7 @@ export const movies = {
     release_date: "2023-08-23",
   },
   {
-    id: "346698",
+    id: 346698,
     adult: false,
     poster_path: '/uQxjZGU6rxSPSMeAJPJQlmfV3ys.jpg',
     title: "Barbie",

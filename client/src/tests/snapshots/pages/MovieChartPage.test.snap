@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render MovieChartPage component and match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-beyTiQ fVxEVq"
+    data-testid="chart-page"
+  >
+    <div
+      class="sc-guDMob hfxJMg"
+    >
+      <button
+        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium css-sghohy-MuiButtonBase-root-MuiButton-root"
+        data-testid="chart-page-button-pie"
+        tabindex="0"
+        type="button"
+      >
+        Check popularity of genres
+        <span
+          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+        />
+      </button>
+      <button
+        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium css-sghohy-MuiButtonBase-root-MuiButton-root"
+        data-testid="chart-page-button-bar"
+        tabindex="0"
+        type="button"
+      >
+        Check budget of genres
+        <span
+          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+        />
+      </button>
+    </div>
+    <div
+      class="sc-dmyDmy kxienC"
+    >
+      <div
+        class="sc-hLQTFJ LlqHW"
+      >
+        <canvas
+          data-testid="chart-page-bar"
+          height="0"
+          role="img"
+          style="display: block; box-sizing: border-box; height: 0px; width: 0px;"
+          width="0"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

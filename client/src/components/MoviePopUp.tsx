@@ -23,8 +23,12 @@ import { MovieStateType } from '../../types';
 
 const IMAGE_PASS: string = 'https://image.tmdb.org/t/p/original';
 
-const MoviePopUp: React.FC = () => {
-  const [show, setShow] = useState<boolean>(false);
+export interface MoviePopUpPropsInterface {
+  isShow?: boolean;
+}
+
+const MoviePopUp: React.FC<MoviePopUpPropsInterface> = (props) => {
+  const [show, setShow] = useState<boolean>(Boolean(props.isShow));
   const { id } = useParams<{ id: string }>();
   const location = useLocation();
   const navigate = useNavigate();
@@ -69,7 +73,7 @@ const MoviePopUp: React.FC = () => {
   if (error) {
     console.error(error);
   }
-  console.log(data);
+
   const movie = data.getMovie || {};
 
   const onAddToStatisticsClick = () => dispatch(addMovie(movie));
@@ -80,7 +84,7 @@ const MoviePopUp: React.FC = () => {
     `${Math.floor(minutes / 60)}.${minutes % 60}`;
 
   return (
-    <Modal open={show} onClose={handleClose}>
+    <Modal open={show} onClose={handleClose} data-testid="popup">
       <ModalDialog color="success" layout="center" size="lg" variant="outlined">
         <ModalClose />
 
@@ -139,12 +143,14 @@ const MoviePopUp: React.FC = () => {
                 <ButtonToTheRight>
                   <ButtonGroup variant="text" aria-label="text button group">
                     <Button
+                      data-testid="popup-add"
                       disabled={isNotInStatistic}
                       onClick={onAddToStatisticsClick}
                     >
                       Add to statistics
                     </Button>
                     <Button
+                      data-testid="popup-delete"
                       disabled={!isNotInStatistic}
                       color="error"
                       onClick={onDeleteFromStatisticsClick}

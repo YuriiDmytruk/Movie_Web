@@ -111,21 +111,29 @@ const MovieChartPage: React.FC = () => {
   const getRandom0_255 = () => Math.floor(Math.random() * 256);
 
   return (
-    <MovieCardStyled>
+    <MovieCardStyled data-testid="chart-page">
       <ButtonGroup>
-        <Button variant="contained" onClick={() => setIsBarSelected(false)}>
+        <Button
+          data-testid="chart-page-button-pie"
+          variant="contained"
+          onClick={() => setIsBarSelected(false)}
+        >
           Check popularity of genres
         </Button>
-        <Button variant="contained" onClick={() => setIsBarSelected(true)}>
+        <Button
+          data-testid="chart-page-button-bar"
+          variant="contained"
+          onClick={() => setIsBarSelected(true)}
+        >
           Check budget of genres
         </Button>
       </ButtonGroup>
       <ChartContainer>
         <ChartInContainer>
           {isBarSelected ? (
-            <Bar data={createDataForBar()} />
+            <Bar data-testid="chart-page-bar" data={createDataForBar()} />
           ) : (
-            <Pie data={createDataForPie()} />
+            <Pie data-testid="chart-page-pie" data={createDataForPie()} />
           )}
         </ChartInContainer>
       </ChartContainer>

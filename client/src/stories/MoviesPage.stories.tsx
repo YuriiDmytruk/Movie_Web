@@ -1,3 +1,4 @@
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
@@ -7,8 +8,8 @@ import { MockedProvider } from '@apollo/client/testing';
 import MoviesPage, { MoviPagePropsInterface } from '../pages/MoviesPage';
 
 import { moviesReducer } from '../redux/ducks/movies';
-import { movies } from './testDataMovies';
-import { detailMovies } from './testDataDetailMovies';
+import { movies } from '../util/Data/testDataMovies';
+import { detailMovies } from '../util/Data/testDataDetailMovies';
 import { GET_POPULAR, GET_POPULAR_TYPE } from '../apolo/queries';
 
 const mocks = [

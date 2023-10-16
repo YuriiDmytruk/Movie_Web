@@ -112,7 +112,7 @@ const MovieStatisticsPage: React.FC = () => {
   };
 
   return (
-    <Paper>
+    <Paper data-testid="statistic-page">
       <Grid rows={rows} columns={columns}>
         <PagingState defaultCurrentPage={0} pageSize={8} />
         <SelectionState

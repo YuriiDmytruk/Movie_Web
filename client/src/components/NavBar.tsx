@@ -76,7 +76,7 @@ const NavBar: React.FC<NavBarPropsInterfce> = (props) => {
               width: '780px',
             }}
           >
-            <ListItem key="Now Playing">
+            <ListItem data-testid="nav-now-playing" key="Now Playing">
               <ListItemButton
                 onClick={onNowPlayingClick}
                 sx={{ textAlign: 'center' }}
@@ -84,7 +84,7 @@ const NavBar: React.FC<NavBarPropsInterfce> = (props) => {
                 <ListItemText primary="Now Playing" />
               </ListItemButton>
             </ListItem>
-            <ListItem key="Popular">
+            <ListItem data-testid="nav-popular" key="Popular">
               <ListItemButton
                 onClick={onPopularClick}
                 sx={{ textAlign: 'center' }}
@@ -92,7 +92,7 @@ const NavBar: React.FC<NavBarPropsInterfce> = (props) => {
                 <ListItemText primary="Popular" />
               </ListItemButton>
             </ListItem>
-            <ListItem key="Top Rated">
+            <ListItem data-testid="nav-top-rated" key="Top Rated">
               <ListItemButton
                 onClick={onTopRatedClick}
                 sx={{ textAlign: 'center' }}
@@ -100,7 +100,7 @@ const NavBar: React.FC<NavBarPropsInterfce> = (props) => {
                 <ListItemText primary="Top Rated" />
               </ListItemButton>
             </ListItem>
-            <ListItem key="Statistic">
+            <ListItem data-testid="nav-statistic" key="Statistic">
               <ListItemButton
                 sx={{ textAlign: 'Statistic' }}
                 onClick={onStatisticClick}
@@ -108,7 +108,7 @@ const NavBar: React.FC<NavBarPropsInterfce> = (props) => {
                 <ListItemText primary="Statistic" />
               </ListItemButton>
             </ListItem>
-            <ListItem key="Chart">
+            <ListItem data-testid="nav-chart" key="Chart">
               <ListItemButton
                 sx={{ textAlign: 'Chart' }}
                 onClick={onChartClick}
@@ -128,7 +128,7 @@ const NavBar: React.FC<NavBarPropsInterfce> = (props) => {
               alignItems: 'center',
             }}
           >
-            <ListItem key="Search">
+            <ListItem data-testid="nav-search" key="Search">
               <ListItemButton
                 onClick={onSearchClick}
                 sx={{ textAlign: 'center' }}

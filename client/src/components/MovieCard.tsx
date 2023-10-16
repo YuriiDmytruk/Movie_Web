@@ -44,7 +44,7 @@ const MovieCard: React.FC<MovieCardPropsInterface> = (props) => {
       </CardContent>
       <Box sx={{ flexGrow: 1 }} />
       <CardActions disableSpacing>
-        <Link to={`/movie/${props.movie.id}`}>
+        <Link data-testid="card-check" to={`/movie/${props.movie.id}`}>
           <Button>Check</Button>
         </Link>
       </CardActions>

@@ -8,15 +8,46 @@ import { createStore } from 'redux';
 
 import { MoviePopUp } from '../../components/index';
 
-import { mocks } from '../mocks';
 import { moviesReducer } from '../../redux/ducks/movies';
 import { detailMovies } from '../../util/Data/testDataDetailMovies';
+import { GET_MOVIE } from '../../apolo/queries';
 
 const store = createStore(moviesReducer, detailMovies);
 
-test('should render App component and match snapshot', async () => {
+test('should render MoviePopUp component and match snapshot', async () => {
+  const popupMock = [
+    {
+      request: {
+        query: GET_MOVIE,
+        variables: {
+          language: 'en-US',
+          id: undefined,
+        },
+      },
+      result: {
+        data: {
+          getMovie: {
+            id: '1',
+            adult: false,
+            budget: 0,
+            genres: [],
+            poster_path: '',
+            original_title: 'GET_MOVIE',
+            popularity: '',
+            overview: '',
+            production_companies: [],
+            production_countries: [],
+            release_date: '',
+            runtime: 0,
+          },
+          total_pages: 1,
+        },
+      },
+    },
+  ];
+
   const { asFragment } = render(
-    <MockedProvider mocks={mocks} addTypename={false}>
+    <MockedProvider mocks={popupMock} addTypename={false}>
       <Provider store={store}>
         <MemoryRouter>
           <MoviePopUp isShow={true} />

@@ -1,12 +1,6 @@
 import React from 'react';
 import { screen } from '@testing-library/dom';
-import {
-  fireEvent,
-  prettyDOM,
-  render,
-  waitFor,
-  within,
-} from '@testing-library/react';
+import { fireEvent, render, waitFor, within } from '@testing-library/react';
 import { MockedProvider } from '@apollo/client/testing';
 import '@testing-library/jest-dom';
 import { MemoryRouter } from 'react-router-dom';
@@ -28,8 +22,6 @@ global.ResizeObserver = class {
 const store = createStore(moviesReducer, detailMovies);
 
 test('should render App component and match snapshot', async () => {
-  const testWrapperArgs = {};
-
   const { asFragment } = render(
     <MockedProvider mocks={mocks} addTypename={false}>
       <Provider store={store}>

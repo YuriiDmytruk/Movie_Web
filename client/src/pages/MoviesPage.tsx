@@ -43,7 +43,13 @@ const MoviePage: React.FC<MoviPagePropsInterface> = (props) => {
     <MoviePageContainer data-testid="movie-page">
       <MovieList movies={movies || []} />
       {data && movies.length !== 0 ? (
-        <MoviePagination page={page} pages={pages} setPage={setPage} />
+        <MoviePagination
+          size="large"
+          color="primary"
+          page={page}
+          pages={pages}
+          setPage={setPage}
+        />
       ) : (
         <></>
       )}

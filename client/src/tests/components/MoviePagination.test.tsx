@@ -11,7 +11,6 @@ import { MoviePagination } from '../../components/index';
 import { mocks } from '../mocks';
 import { moviesReducer } from '../../redux/ducks/movies';
 import { detailMovies } from '../../util/Data/testDataDetailMovies';
-import { movies } from '../../util/Data/testDataMovies';
 
 const store = createStore(moviesReducer, detailMovies);
 

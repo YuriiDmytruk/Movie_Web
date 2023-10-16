@@ -26,4 +26,7 @@ Standart.args = {
   setPage: () => {},
   pages: 20,
   page: 1,
+  color: 'primary',
+  outlined: false,
+  size: 'large',
 };

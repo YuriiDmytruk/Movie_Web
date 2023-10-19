@@ -12,6 +12,7 @@ import {
 } from '@mui/material';
 
 import { cardStyle } from '../styled/MovieCard';
+
 import { MovieType } from '../../types';
 
 interface MovieCardPropsInterface {

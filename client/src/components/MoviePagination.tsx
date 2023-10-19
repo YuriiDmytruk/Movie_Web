@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Pagination from '@mui/material/Pagination';
 
 import { PaginationStyled } from '../styled/MoviePagination';
-import { LargeNumberLike } from 'crypto';
 
 export interface MoviePaginationInterfce {
   setPage: (page: number) => void;

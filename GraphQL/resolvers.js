@@ -1,13 +1,77 @@
-const fetchPopulatMovies = require('./api');
+const {
+  fetchData,
+  createURL,
+  GET_POPULAR,
+  GET_MOVIE,
+  GET_BY_QUERY,
+  GET_TOP_RATED,
+  GET_NOW_PLAYING,
+} = require('./api');
 
 const resolvers = {
   Query: {
-    getPopularMovies: () => {
-      console.log(fetchPopulatMovies());
-      return [
-        { id: '1', title: 'Movie 1', releaseDate: '2023-01-01' },
-        { id: '2', title: 'Movie 2', releaseDate: '2023-02-01' },
-      ];
+    getPopularMovies: async (parent, { page, language }, context) => {
+      const result = await fetchData(
+        createURL(GET_POPULAR, {
+          page: page,
+          language: language,
+        })
+      );
+      const response = {
+        movies: result.results,
+        total_pages: result.total_pages,
+      };
+      return response;
+    },
+
+    getTopRatedMovies: async (parent, { page, language }, context) => {
+      const result = await fetchData(
+        createURL(GET_TOP_RATED, {
+          page: page,
+          language: language,
+        })
+      );
+      const response = {
+        movies: result.results,
+        total_pages: result.total_pages,
+      };
+      return response;
+    },
+
+    getNowPlayingMovies: async (parent, { page, language }, context) => {
+      const result = await fetchData(
+        createURL(GET_NOW_PLAYING, {
+          page: page,
+          language: language,
+        })
+      );
+      const response = {
+        movies: result.results,
+        total_pages: result.total_pages,
+      };
+      return response;
+    },
+
+    getMovie: async (parent, { id, language }, context) => {
+      const result = await fetchData(
+        createURL(GET_MOVIE, { id: id, language: language })
+      );
+      return result;
+    },
+
+    getSearchedMovie: async (parent, { query, language, page }, context) => {
+      const result = await fetchData(
+        createURL(GET_BY_QUERY, {
+          query: query,
+          language: language,
+          page: page,
+        })
+      );
+      const response = {
+        movies: result.results,
+        total_pages: result.total_pages,
+      };
+      return response;
     },
   },
 };
